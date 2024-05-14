@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./allReviews.css"
 import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer, Heading, Button } from '@chakra-ui/react'
 import { DeleteIcon, EditIcon, ArrowLeftIcon, ArrowRightIcon, ArrowUpIcon, ArrowDownIcon } from '@chakra-ui/icons'
+import {useNavigate} from 'react-router-dom'
 
 const AllReviews = () => {
     const[update,setUpdate] = useState(false);
+    const navigate = useNavigate();
 
     const reviewData = JSON.parse(localStorage.getItem("aromatic")) || [];
     console.log("original",reviewData);
@@ -13,6 +15,11 @@ const AllReviews = () => {
         const splicedReviewData = reviewData.splice(id,1);
         localStorage.setItem("aromatic",JSON.stringify(reviewData));
         setUpdate(!update)
+    }
+
+    const handleAdd = ()=>{
+        console.log("add")
+        navigate('/')
     }
 
     return (
@@ -53,7 +60,9 @@ const AllReviews = () => {
                     </Table>
                 </TableContainer>
             </div>
-
+            <Button colorScheme='purple' size='lg' className="submit addnew" onClick={handleAdd}>
+                Add New
+            </Button>
         </div>
     )
 }

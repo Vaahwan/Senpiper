@@ -1,0 +1,49 @@
+.addnew{
+    position: relative;
+    left: 540px;
+    top: 100px;
+}
+
+@media (max-width:1230px) and (min-width:1000px){
+    .tablecontainer{
+        width: 1000px;
+    }
+    .addnew{
+        position: relative;
+        left: 0px;
+        top: 100px;
+    }
+}
+
+@media (max-width:1000px) and (min-width:800px){
+    .tablecontainer{
+        width: 800px;
+    }
+    .addnew{
+        position: relative;
+        left: 0px;
+        top: 100px;
+    }
+}
+
+@media (max-width:800px) and (min-width:600px){
+    .tablecontainer{
+        width: 600px;
+    }
+    .addnew{
+        position: relative;
+        left: 0px;
+        top: 100px;
+    }
+}
+
+@media (max-width:600px) and (min-width:400px){
+    .tablecontainer{
+        width: 400px;
+    }
+    .addnew{
+        position: relative;
+        left: 0px;
+        top: 100px;
+    }
+}
