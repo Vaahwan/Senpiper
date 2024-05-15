@@ -113,7 +113,7 @@ const Form = () => {
                     <FormControl isRequired className="formcontrol" isInvalid={nameErr} >
                         <FormLabel>Customer name</FormLabel>
                         <Input placeholder='Eg. Jon snow' onChange={(e)=>{setCustomerName(e.target.value)}} />
-                        {nameErr ? <FormErrorMessage> Name should be atleast of 3 letters </FormErrorMessage> : null}
+                        {nameErr ? <FormErrorMessage> Name should be atleast of 3 letters and not numbers </FormErrorMessage> : null}
                     </FormControl>
 
                     <FormControl isRequired className="formcontrol" isInvalid={phoneErr}>
