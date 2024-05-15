@@ -46,6 +46,18 @@ const Form = () => {
         }
     }
 
+    const isValidName = (name)=>{
+        const namePattern = /^[a-z ,.'-]+$/i
+        if(namePattern.test(name)){
+            setNameErr(false);
+            return true;
+        }
+        else{
+            setNameErr(true);
+            return false;
+        }
+    }
+
     const isValid = (name,func)=>{
         if(name.length>=3){
             func(false);
@@ -60,12 +72,13 @@ const Form = () => {
     const handleSubmit = ()=>{
         isValidEmail(email);
         isValidPhone(phone);
-        isValid(customerName,setNameErr);
+        isValidName(customerName);
+        // isValid(customerName,setNameErr);
         isValid(hostService,setHostServiceErr);
         isValid(wasClean,setWasCleanErr);
         isValid(qulaityBaverage,setQualityBaverageErr);
         isValid(diningExperience,setDiningExperienceErr);
-        if(isValidEmail(email) && isValidPhone(phone) && isValid(customerName,setNameErr) && isValid(hostService,setHostServiceErr) && isValid(wasClean,setWasCleanErr) && isValid(qulaityBaverage,setQualityBaverageErr) && isValid(diningExperience,setDiningExperienceErr)){
+        if(isValidEmail(email) && isValidPhone(phone) && isValidName(customerName) && isValid(hostService,setHostServiceErr) && isValid(wasClean,setWasCleanErr) && isValid(qulaityBaverage,setQualityBaverageErr) && isValid(diningExperience,setDiningExperienceErr)){
             const reviewObj = {
                 "customerName" : customerName,
                 "email" : email,
