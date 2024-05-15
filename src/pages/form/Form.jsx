@@ -48,7 +48,7 @@ const Form = () => {
 
     const isValidName = (name)=>{
         const namePattern = /^[a-z ,.'-]+$/i
-        if(namePattern.test(name)){
+        if(namePattern.test(name) && name.length>=3){
             setNameErr(false);
             return true;
         }
